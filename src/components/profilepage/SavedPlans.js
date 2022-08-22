@@ -22,30 +22,21 @@ export const SavedPlans = () => {
         })
     },[])
 
-    // useEffect(() => {
-        
-    // },[])
-    
-// or get the activity table array below, use a .find
+    const activityOneMatch = (plan) => {
+        activities.find(activity => plan.activityOneId === activity.id)
+    }
+
 
     return (
         <>
         <section className="saved__list">
+            <h2>Saved Plans</h2>
             {
                 plans.map(plan => {
                     return <>
                     <div className="saved__item">
-                        <h4>Plan</h4>
-                        <p>Activity One: {activities.find(activity => {
-                            if (activity.id === plan.activityOneId) {
-                                return ( <>
-                                    <p>
-                                    {activity.activityName}
-                                    </p>
-                                </>
-                                )
-                            }
-                        })}</p>
+                        <p>Activity One: </p>
+                        <p></p>
                         <p>Activity Two: </p>
                         <p>Activity Three: </p>
                     </div>

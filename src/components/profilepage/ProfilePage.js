@@ -12,7 +12,7 @@ export const ProfilePage = () => {
         </div>
 
         <div className="profileColumn">
-        {/* <UserProfileCard /> */}
+        <UserProfileCard />
         </div>
     </>
     )
