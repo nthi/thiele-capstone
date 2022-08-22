@@ -51,3 +51,4 @@ export const SavedPlans = () => {
 }
 
 //weird situation: this works sometimes and gives me an error about undefined activityName about every other time.
+//also fix situation where youtube link in description does not appear in details for activity three. Might be a "" or '' situation?
