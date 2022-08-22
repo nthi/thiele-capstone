@@ -22,23 +22,25 @@ export const SavedPlans = () => {
         })
     },[])
 
-    const activityOneMatch = (plan) => {
-        activities.find(activity => plan.activityOneId === activity.id)
-    }
+
 
 
     return (
         <>
-        <section className="saved__list">
+        <section className="savedPlans__list">
             <h2>Saved Plans</h2>
             {
                 plans.map(plan => {
                     return <>
                     <div className="saved__item">
-                        <p>Activity One: </p>
-                        <p></p>
-                        <p>Activity Two: </p>
-                        <p>Activity Three: </p>
+                        <p>Activity One: {activities.find(x=> x.id === plan.activityOneId).activityName} </p>
+                        <p>Details: {activities.find(x=> x.id === plan.activityOneId).activityDescription}</p>
+
+                        <p>Activity Two: {activities.find(x=> x.id === plan.activityTwoId).activityName}</p>
+                        <p>Details: {activities.find(x=> x.id === plan.activityTwoId).activityDescription}</p>
+
+                        <p>Activity Three: {activities.find(x=> x.id === plan.activityThreeId).activityName}</p>
+                        <p>Details: {activities.find(x=> x.id === plan.activityThreeId).activityDescription}</p>
                     </div>
                     </>
                 })
@@ -47,3 +49,5 @@ export const SavedPlans = () => {
         </>
     )
 }
+
+//weird situation: this works sometimes and gives me an error about undefined activityName about every other time.
