@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom"
-import { Authorized } from "./views/Authorized"
-import { ApplicationViews } from "./views/ApplicationViews"
-import { NavBar } from "./nav/NavBar"
-import { Login } from "./auth/Login"
-import { Register } from "./auth/Register"
+import { Authorized } from "./components/views/Authorized"
+import { ApplicationViews } from "./components/views/ApplicationViews"
+import { NavBar } from "./components/nav/NavBar"
+import { Login } from "./components/auth/Login"
+import { Register } from "./components/auth/Register"
 import "./wswd.css"
 
 

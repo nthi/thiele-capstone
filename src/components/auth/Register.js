@@ -46,7 +46,7 @@ export const Register = (props) => {
             })
     }
 
-    const updateCustomer = (evt) => {
+    const updateUser = (evt) => {
         const copy = {...user}
         copy[evt.target.id] = evt.target.value
         setUser(copy)

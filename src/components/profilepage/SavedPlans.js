@@ -15,17 +15,19 @@ export const SavedPlans = () => {
         .then((planArray) => {
             setPlans(planArray)
         })
-    },[])
-
-    useEffect(() => {
         fetch(`http://localhost:8088/activities`)
         .then((response) => response.json())
         .then((activityArray) => {
             setActivities(activityArray)
         })
     },[])
+
+    // useEffect(() => {
+        
+    // },[])
     
 // or get the activity table array below, use a .find
+
     return (
         <>
         <section className="saved__list">
@@ -38,14 +40,14 @@ export const SavedPlans = () => {
                             if (activity.id === plan.activityOneId) {
                                 return ( <>
                                     <p>
-                                    activity.activityName
+                                    {activity.activityName}
                                     </p>
                                 </>
                                 )
                             }
                         })}</p>
-                        <p>Activity Two: {}</p>
-                        <p>Activity Three: {}</p>
+                        <p>Activity Two: </p>
+                        <p>Activity Three: </p>
                     </div>
                     </>
                 })

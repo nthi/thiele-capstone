@@ -1,4 +1,6 @@
-import { Outlet, Routes } from "react-router-dom"
+import { Outlet, Routes, Route } from "react-router-dom"
+import { MainPage } from "../mainpage/MainPage"
+import { ProfilePage } from "../profilepage/ProfilePage"
 
 export const ApplicationViews = () => {
     return (
