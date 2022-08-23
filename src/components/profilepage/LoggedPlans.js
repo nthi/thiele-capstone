@@ -1,5 +1,7 @@
 //once a saved plan has notes added to it and saved, it becomes logged and then displayed here
 import { useEffect, useState } from "react"
+import { Plan } from "./Plan"
+
 
 export const LoggedPlans = () => {
     const [plans, setPlans] = useState([])
@@ -31,19 +33,9 @@ export const LoggedPlans = () => {
             {
                 plans.map(
                     (plan) =>
-                    <Plan plans={plans}
-                    activities={activities}
-                    planObject={plan}/>
-                    // <div className="logged__item" key={plan.id}>
-                    //     <p>Activity One: {activities.find(x=> x.id === plan.activityOneId)?.activityName} </p>
-                    //     <p>Details: {activities.find(x=> x.id === plan.activityOneId)?.activityDescription}</p>
-
-                    //     <p>Activity Two: {activities.find(x=> x.id === plan.activityTwoId)?.activityName}</p>
-                    //     <p>Details: {activities.find(x=> x.id === plan.activityTwoId)?.activityDescription}</p>
-
-                    //     <p>Activity Three: {activities.find(x=> x.id === plan.activityThreeId)?.activityName}</p>
-                    //     <p>Details: {activities.find(x=> x.id === plan.activityThreeId)?.activityDescription}</p>
-                    // </div>
+                    <Plan key={`logged--${plan.id}`}
+                    activities={activities} 
+                    plan={plan}/>
                 )
             }
         </section>

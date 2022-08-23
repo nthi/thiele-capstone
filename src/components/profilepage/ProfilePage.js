@@ -9,11 +9,11 @@ export const ProfilePage = () => {
         </div>
 
         <div className="savedColumn">
-        <SavedPlans />
+        {/* <SavedPlans /> */}
         </div>
 
         <div className="profileColumn">
-        <UserProfileCard />
+        {/* <UserProfileCard /> */}
         </div>
     </>
     )
