@@ -1,6 +1,8 @@
 //this component will display list of all plans that user "saves". Will include notes form.
+//question: is there a way to call the activities array to state once for the entire app so that it's not happening once per place that plans are displayed?
 
 import { useEffect, useState } from "react"
+import { Plan } from "./Plan"
 
 export const SavedPlans = () => {
     const [plans, setPlans] = useState([])
@@ -30,20 +32,12 @@ export const SavedPlans = () => {
         <section className="savedPlans__list">
             <h2>Saved Plans</h2>
             {
-                plans.map(plan => {
-                    return <>
-                    <div className="saved__item" key={plan.id}>
-                        <p>Activity One: {activities.find(x=> x.id === plan.activityOneId)?.activityName} </p>
-                        <p>Details: {activities.find(x=> x.id === plan.activityOneId)?.activityDescription}</p>
-
-                        <p>Activity Two: {activities.find(x=> x.id === plan.activityTwoId)?.activityName}</p>
-                        <p>Details: {activities.find(x=> x.id === plan.activityTwoId)?.activityDescription}</p>
-
-                        <p>Activity Three: {activities.find(x=> x.id === plan.activityThreeId)?.activityName}</p>
-                        <p>Details: {activities.find(x=> x.id === plan.activityThreeId)?.activityDescription}</p>
-                    </div>
-                    </>
-                })
+                plans.map(
+                    (plan) =>
+                    <Plan key={`logged--${plan.id}`}
+                    activities={activities} 
+                    plan={plan}/>
+                )
             }
         </section>
         </>
