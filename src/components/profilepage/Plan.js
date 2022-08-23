@@ -31,6 +31,7 @@ export const Plan = ({plan, activities}) => {
             .then(response => response.json())
             .then()
     }
+    //I think I need to refresh the page immediately with saveAndLogPlan button click. goes in that last .then? In HoneyRae's, I think this was "getAllTickets() which was deconstructed in what would be this component's function notation at the top ({})"
 
 
     let actOne = activities.find(x=> x.id === plan.activityOneId)
@@ -64,7 +65,7 @@ export const Plan = ({plan, activities}) => {
                     <fieldset>
                     <div className="form-group">
                     <label htmlFor="contents"></label>
-                        <input
+                        <textarea name="notes"
                             required autoFocus
                             type="text"
                             className="form-control"
