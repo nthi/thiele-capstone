@@ -23,7 +23,13 @@ export const Plan = ({plan, activities}) => {
             <p>Activity Three: {actThree?.activityName}</p>
             <p>Details: {actThree?.activityDescription}</p>
 
-            <p>Date: {plan.date} </p>
+            <div>
+            {
+                plan.date
+                ? `Date: ${plan.date} `
+                : ""
+            }
+            </div>
         </div>
     )
 }
