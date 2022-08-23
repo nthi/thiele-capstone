@@ -5,7 +5,7 @@ import { UserProfileCard } from "./UserProfileCard"
 export const ProfilePage = () => {
     return (<>
         <div className="loggedColumn">
-        {/* <LoggedPlans /> */}
+        <LoggedPlans />
         </div>
 
         <div className="savedColumn">
@@ -13,7 +13,7 @@ export const ProfilePage = () => {
         </div>
 
         <div className="profileColumn">
-        {/* <UserProfileCard /> */}
+        <UserProfileCard />
         </div>
     </>
     )
