@@ -15,20 +15,21 @@ export const Plan = ({plan, activities}) => {
         isLogged: ""
     })
 
-    const updatePlan = () => {
+    const saveAndLogPlan = (event) => {
         const copy = {
             date: new Date(),
             note: planNote.note,
             isLogged: true
         }
-        fetch(`http://localhost:8088/userActivityBridge?isLogged=false&userId=${wswdObject.id}`, {
-            method: "PUT",
+        fetch(`http://localhost:8088/userActivityBridge/${plan.id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(copy)
         })
             .then(response => response.json())
+            .then()
     }
 
 
@@ -59,7 +60,8 @@ export const Plan = ({plan, activities}) => {
             <div>
                 {
                     !plan.isLogged
-                    ? <fieldset>
+                    ? <> 
+                    <fieldset>
                     <div className="form-group">
                     <label htmlFor="contents"></label>
                         <input
@@ -77,6 +79,11 @@ export const Plan = ({plan, activities}) => {
                             } />
                     </div>
                     </fieldset>
+                    <button onClick={(clickEvent) => saveAndLogPlan(clickEvent)} className="btn btn-primary">
+                    Submit Note and Log Plan
+                    </button>
+                    <h1>Hello</h1>
+                     </>
                 : ""
                 }
             </div>
