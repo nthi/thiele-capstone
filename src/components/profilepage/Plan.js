@@ -59,6 +59,14 @@ export const Plan = ({plan, activities}) => {
             </div>
 
             <div>
+            {
+                plan.note
+                ? `Note: ${plan.note}`
+                : ""
+            }
+            </div>
+
+            <div>
                 {
                     !plan.isLogged
                     ? <> 
