@@ -10,12 +10,12 @@ export const MainPage = () => {
         <h2>hey y'all</h2>
 
         <div className="displayPlanRow">
-        {/* <DisplayPlan /> */}
+        <DisplayPlan />
         </div>
 
-        <div>
+        {/* <div>
             <RandomPlan />
-        </div>
+        </div> */}
 
     </>
     )

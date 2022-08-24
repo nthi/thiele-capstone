@@ -49,5 +49,7 @@ export const RandomPlan = () => {
 
     console.log(tentativePlan)
 
-    //return tentativePlan
+    return tentativePlan
 }
+
+//what if I return the "generate plan" button and the plan for display in this component then call the component in the return display in DisplayPlan?js? Then the display there is only responsible for the save button display and click event.
