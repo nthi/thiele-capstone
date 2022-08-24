@@ -3,6 +3,7 @@
 //TO DO: for stretch goals, add custom-submission-form where user can add a link that will automatically appear in their plan or add it to the activity table to be included in the future.
 
 import { DisplayPlan } from "./DisplayPlan"
+import { RandomPlan } from "./RandomPlan"
 
 export const MainPage = () => {
     return (<>
@@ -10,6 +11,10 @@ export const MainPage = () => {
 
         <div className="displayPlanRow">
         {/* <DisplayPlan /> */}
+        </div>
+
+        <div>
+            <RandomPlan />
         </div>
 
     </>

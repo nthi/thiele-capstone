@@ -23,3 +23,7 @@
 //     )
 
 // }
+
+//pass state between two components
+//either have parent/child relationship and pass state up or down as props
+//siblings, state in whatever closest parent ... this is like TicketContainer in honeyraes
