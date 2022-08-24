@@ -5,6 +5,8 @@ export const NavBar = () => {
     const navigate = useNavigate()
 
     return (
+        <>
+        <img src="logo.jpg" class="logo" alt="Logo featuring line art: charcoal background, light-blue generic human figure holding line art rainbow overhead." />
         <ul className="navbar">
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/main">Main</Link>
@@ -26,5 +28,6 @@ export const NavBar = () => {
                     : ""
             }
         </ul>
+        </>
     )
 }

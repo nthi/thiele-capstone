@@ -1,0 +1,10 @@
+.navbar {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color: #C2EAFF;
+}
+
+ul {
+    list-style-type: none;
+}
