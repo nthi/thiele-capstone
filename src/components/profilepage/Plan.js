@@ -91,7 +91,6 @@ export const Plan = ({plan, activities}) => {
                     <button onClick={(clickEvent) => saveAndLogPlan(clickEvent)} className="btn btn-primary">
                     Submit Note and Log Plan
                     </button>
-                    <h1>Hello</h1>
                      </>
                 : ""
                 }
