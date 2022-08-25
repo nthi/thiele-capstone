@@ -4,25 +4,19 @@
 import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
 
-export const SavedPlans = () => {
+export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}) => {
     const [plans, setPlans] = useState([])
     const [activities, setActivities] = useState([])
 
-    const localWSWDUser = localStorage.getItem("wswd_user")
-    const wswdObject = JSON.parse(localWSWDUser)
+
 
     useEffect(() => {
-        fetch(`http://localhost:8088/userActivityBridge?isLogged=false&userId=${wswdObject.id}`)
-        .then((response) => response.json())
-        .then((planArray) => {
-            setPlans(planArray)
-        })
-        fetch(`http://localhost:8088/activities`)
-        .then((response) => response.json())
-        .then((activityArray) => {
-            setActivities(activityArray)
-        })
-    },[])
+        const viewPlan = allPlans.filter(plan => plan.isLogged === false)
+        setPlans(viewPlan)
+
+    },[allPlans])
+
+    //set state for all activy bridge in profile page, then get that state in useEffect (can also do fetch activities in profile page), then use a .filter to get isLogged true or false
 
 //over lunch, think about if it has a note/date, then they need to be added to loggedPlans and that state re-pulled from database so it's up to date
 //conditional, also some kind of setState situation
@@ -36,8 +30,9 @@ export const SavedPlans = () => {
                 plans.map(
                     (plan) =>
                     <Plan key={`logged--${plan.id}`}
-                    activities={activities} 
-                    plan={plan}/>
+                    activities={allActivities} 
+                    plan={plan}
+                    updateAllPlans={updateAllPlans}/>
                 )
             }
         </section>

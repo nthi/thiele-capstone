@@ -7,7 +7,9 @@
 import { useState } from "react"
 
 //when form is edited and/or saved-and-logged, page display should refresh immediately and the saved plan which was logged will now appear with notes and a timestamp in the logged display.
-export const Plan = ({plan, activities}) => {
+export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
+
+
 
     const [planNote, updatePlanNote] = useState({
         date: "",
@@ -17,21 +19,35 @@ export const Plan = ({plan, activities}) => {
 
     const saveAndLogPlan = (event) => {
         const copy = {
+            //add rest of stuff here
+            id: plan.id,
+            userId: plan.userId,
+            activityOneId: plan.activityOneId,
+            activityTwoId: plan.activityTwoId,
+            activityThreeId: plan.activityThreeId,
             date: new Date(),
             note: planNote.note,
             isLogged: true
         }
         fetch(`http://localhost:8088/userActivityBridge/${plan.id}`, {
-            method: "PATCH",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(copy)
         })
             .then(response => response.json())
-            .then()
+            .then(() => {
+                fetch(`http://localhost:8088/userActivityBridge?userId=${wswdObject.id}`)
+                .then((response) => response.json())
+                .then((planArray) => {
+                    updateAllPlans(planArray)
+                })
+            })
     }
     //I think I need to refresh the page immediately with saveAndLogPlan button click. goes in that last .then? In HoneyRae's, I think this was "getAllTickets() which was deconstructed in what would be this component's function notation at the top ({})"
+    //    const [plansToDisplay, updatePlansToDisplay] = useState([])
+    // and somewhere a .then(plansArray => updatePlansToDisplay(plansArray))
 
 
     let actOne = activities.find(x=> x.id === plan.activityOneId)
