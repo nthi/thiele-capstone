@@ -1,0 +1,19 @@
+.blueButton {
+    background-color: #3A86FF;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
+.purpleButton {
+    background-color: #6A4C93;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}

@@ -2,12 +2,15 @@
 
 import { useState } from "react"
 import { RandomPlan } from "./RandomPlan"
+import "./mainpage.css"
+import { useNavigate } from "react-router-dom"
 
 export const DisplayPlan = () => {
 
-    //new useState just for holding the random plan
-    const [randomPlans, updateRandomPlans] = useState([])
+    //needs a useState just for holding the random plan
+    const [tacoPlan, updateRandomPlans] = useState([])
 
+    const navigate = useNavigate()
     //this logic pulled from an app with  a form and we're using values from targets on the form. is this applicable in this component?
     const [newPlan, saveNewPlan] = useState({
         
@@ -23,68 +26,71 @@ export const DisplayPlan = () => {
     const localWSWDUser = localStorage.getItem("wswd_user")
     const wswdObject = JSON.parse(localWSWDUser)
 
+    //note: this random function generator gets mad after a couple of sequential clicks. Will work a few times in a row, but sometimes stall out and only work again if you refresh, save a plan then navigate back to main and generate plan again, or save plan, nav back, then refresh.
     const generatePlanButtonClick = (event) => {
         event.preventDefault()
 
-        //see what happens in console. Not simply running the RandomPlan and returning the array. Should I move randomplan logic here? If not, what kind of state am I passing between randomplan and here?
-        let plans = RandomPlan()
-        console.log(plans)
-        updateRandomPlans(plans)
+        //this function contains a fetch call, which is why we need a .then when we call it here.
+        //RandomPlan fetches the activities table and ultimately returns a random three-plan-activity. This puts that random plan in state so we can display it and potentially save/POST it to the bridge table.
+        RandomPlan()
+       .then(updateRandomPlans)
+
     }
 
     //to post a saved plan obj to the bridge table
     //where will I be pulling the activityOne/two/three values?
-    // const handleSaveButtonClick = (event) => {
-    //     event.preventDefault()
+    const handleSaveButtonClick = (event) => {
+        event.preventDefault()
 
-    //         const planToSendToAPI = {
-    //             userId: wswdObject.id,
-    //             activityOneId: ,
-    //             activityTwoId: ,
-    //             activityThreeId: ,
-    //             date: "",
-    //             note: "",
-    //             isLogged: false
-    //         }
+            const planToSendToAPI = {
+                userId: wswdObject.id,
+                activityOneId: tacoPlan[0].id,
+                activityTwoId: tacoPlan[1].id,
+                activityThreeId: tacoPlan[2].id,
+                date: "",
+                note: "",
+                isLogged: false
+            }
 
         
-    //     fetch(`http://localhost:8088/userActivityBridge`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(ticketToSendToAPI)
-    //     })
-    //         .then(response => response.json())
-    //         .then(() => {})
-    // }
+        fetch(`http://localhost:8088/userActivityBridge`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(planToSendToAPI)
+        })
+            .then(response => response.json())
+            .then(() => {
+                navigate("/profile")
+            })
+    }
 
 
     return (
         <>
         <button 
             onClick={(clickEvent) => generatePlanButtonClick(clickEvent)}
-            className="btn btn-primary">
+            className="blueButton">
             Generate Plan
         </button>
         
         <div>
             {
-                randomPlans
+                tacoPlan
                 ? <section className="displayPlan">
                     <h2>Try This!</h2>
                     <div>
                     {
-                        randomPlans.map(plan => {
-                            <div className="plan__item" key={plan.id}>
+                        tacoPlan.map(plan => 
+                            <div className="plan__item">
         
                             <p>Activity: {plan.activityName} </p>
                             <p>Details: {plan.activityDescription}</p>
         
         
                             </div>
-                        }
-                    
+                        
                         )
                     }
                     </div>
@@ -94,17 +100,14 @@ export const DisplayPlan = () => {
 
         </div>
         
+        <button 
+            onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+            className="purpleButton">
+            Save Plan
+        </button>
 
         </>
     )
 
 }
 
-
-//this is still unhappy about displaying the mapped plans situation. whether or not the "Try This" prints seems to be based on randomplans[]or not.
-//error in console: randomPlans.map is not a function
-
-//notes for myself
-//pass state between two components
-//either have parent/child relationship and pass state up or down as props
-//siblings, state in whatever closest parent ... this is like TicketContainer in honeyraes

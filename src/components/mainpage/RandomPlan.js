@@ -4,10 +4,10 @@
 
 export const RandomPlan = () => {
 
+let thing = []
 
 
-
-        return fetch(`http://localhost:8088/activities`)
+    return fetch(`http://localhost:8088/activities`)
         .then((response) => response.json())
         .then((activities) => {
         
@@ -25,10 +25,12 @@ export const RandomPlan = () => {
 
     let tentativePlan = [randomOne, randomTwo, randomThree]
 
-    console.log(tentativePlan)
 
-    return tentativePlan 
+    thing =  tentativePlan 
+return thing
         })
+
+      
 }
 
 //what if I return the "generate plan" button and the plan for display in this component then call the component in the return display in DisplayPlan?js? Then the display there is only responsible for the save button display and click event.

@@ -24,7 +24,8 @@ export const SavedPlans = () => {
         })
     },[])
 
-
+//over lunch, think about if it has a note/date, then they need to be added to loggedPlans and that state re-pulled from database so it's up to date
+//conditional, also some kind of setState situation
 
 
     return (
