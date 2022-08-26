@@ -15,5 +15,14 @@
     text-align: center;
     font-size: 14px;
     padding: 10px 24px;
-    border-radius: 4px;   
+    border-radius: 4px;
+}
+
+.displayPlan {
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    border: double 2px #6558F5;
+    padding: 1rem;
+    margin: 2rem;
 }

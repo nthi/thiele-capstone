@@ -4,18 +4,22 @@
 
 import { DisplayPlan } from "./DisplayPlan"
 import { RandomPlan } from "./RandomPlan"
+import { useNavigate } from "react-router-dom"
 
 export const MainPage = () => {
+    const navigate = useNavigate()
+
     return (<>
-        <h2>hey y'all</h2>
 
         <div className="displayPlanRow">
         <DisplayPlan />
         </div>
 
-        {/* <div>
-            <RandomPlan />
-        </div> */}
+        <button           
+            onClick={() => {navigate("/activities")}}
+            className="blueButton">
+            Add a Custom Activity
+        </button>
 
     </>
     )

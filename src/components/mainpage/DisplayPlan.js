@@ -74,12 +74,13 @@ export const DisplayPlan = () => {
             className="blueButton">
             Generate Plan
         </button>
+
+        <h2>Try This!</h2>
         
         <div>
             {
                 tacoPlan
                 ? <section className="displayPlan">
-                    <h2>Try This!</h2>
                     <div>
                     {
                         tacoPlan.map(plan => 
