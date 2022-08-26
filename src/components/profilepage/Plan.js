@@ -53,9 +53,13 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
         fetch(`http://localhost:8088/userActivityBridge/${plan.id}`, {
                     method: "DELETE"
                 })
-            .then(() => {
-                updateAllPlans()
-            })
+                .then(() => {
+                    fetch(`http://localhost:8088/userActivityBridge?userId=${wswdObject.id}`)
+                    .then((response) => response.json())
+                    .then((planArray) => {
+                        updateAllPlans(planArray)
+                    })
+                })
     }
     //clair, ten minutes yoga, short trip outside DID delete, then page blinked to solid yellow/blank/no plans, then refresh made it come back without the plan I deleted.
 
@@ -113,18 +117,19 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
                             } />
                     </div>
                     </fieldset>
-                    <button onClick={(clickEvent) => saveAndLogPlan(clickEvent)} className="btn btn-primary">
+                    <button onClick={(clickEvent) => saveAndLogPlan(clickEvent)} className="indigoButton">
                     Submit Note and Log Plan
                     </button>
                      </>
                 : ""
                 }
             </div>
+            <br></br>
             <div>
                 {
                     !plan.isLogged
                     ? <> 
-                    <button onClick={(clickEvent) => deletePlan(clickEvent)} className="btn btn-primary">
+                    <button onClick={(clickEvent) => deletePlan(clickEvent)} className="redButton">
                     Not a Fan? Delete this Plan!
                     </button>
                      </>
