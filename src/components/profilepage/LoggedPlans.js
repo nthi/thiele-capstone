@@ -1,6 +1,7 @@
 //once a saved plan has notes added to it and saved, it becomes logged and then displayed here
 import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
+import "./profilepage.css"
 
 
 export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
@@ -19,6 +20,7 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
         console.log(viewPlan)
         setPlans(viewPlan)
     },[allPlans])
+    //I need to also add logic to sort these chronologically.
 
 
 

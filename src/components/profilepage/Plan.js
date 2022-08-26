@@ -49,6 +49,15 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
     //    const [plansToDisplay, updatePlansToDisplay] = useState([])
     // and somewhere a .then(plansArray => updatePlansToDisplay(plansArray))
 
+    const deletePlan = (event) => {
+        fetch(`http://localhost:8088/userActivityBridge/${plan.id}`, {
+                    method: "DELETE"
+                })
+            .then(() => {
+                updateAllPlans()
+            })
+    }
+    //clair, ten minutes yoga, short trip outside DID delete, then page blinked to solid yellow/blank/no plans, then refresh made it come back without the plan I deleted.
 
     let actOne = activities.find(x=> x.id === plan.activityOneId)
     let actTwo = activities.find(x=> x.id === plan.activityTwoId)
@@ -106,6 +115,17 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
                     </fieldset>
                     <button onClick={(clickEvent) => saveAndLogPlan(clickEvent)} className="btn btn-primary">
                     Submit Note and Log Plan
+                    </button>
+                     </>
+                : ""
+                }
+            </div>
+            <div>
+                {
+                    !plan.isLogged
+                    ? <> 
+                    <button onClick={(clickEvent) => deletePlan(clickEvent)} className="btn btn-primary">
+                    Not a Fan? Delete this Plan!
                     </button>
                      </>
                 : ""

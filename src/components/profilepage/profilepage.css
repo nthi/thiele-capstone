@@ -1,0 +1,4 @@
+.loggedPlans__list, .savedPlans__list {
+    height: 500px;
+    overflow: scroll;
+}

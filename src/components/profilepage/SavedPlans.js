@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
+import "./profilepage.css"
 
 export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}) => {
     const [plans, setPlans] = useState([])
