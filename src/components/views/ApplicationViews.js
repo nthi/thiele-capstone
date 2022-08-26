@@ -1,4 +1,5 @@
 import { Outlet, Routes, Route } from "react-router-dom"
+import { ActivityForm } from "../activitiesform/ActivitiesForm"
 import { MainPage } from "../mainpage/MainPage"
 import { ProfilePage } from "../profilepage/ProfilePage"
 
@@ -18,6 +19,10 @@ export const ApplicationViews = () => {
                 
                 <Route path="/profile" element={
                     <ProfilePage />
+                } />
+
+                <Route path="/activities" element={
+                    <ActivityForm />
                 } />
                 
             </Route>

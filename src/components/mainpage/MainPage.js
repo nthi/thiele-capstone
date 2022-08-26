@@ -3,14 +3,23 @@
 //TO DO: for stretch goals, add custom-submission-form where user can add a link that will automatically appear in their plan or add it to the activity table to be included in the future.
 
 import { DisplayPlan } from "./DisplayPlan"
+import { RandomPlan } from "./RandomPlan"
+import { useNavigate } from "react-router-dom"
 
 export const MainPage = () => {
+    const navigate = useNavigate()
+
     return (<>
-        <h2>hey y'all</h2>
 
         <div className="displayPlanRow">
-        {/* <DisplayPlan /> */}
+        <DisplayPlan />
         </div>
+
+        <button           
+            onClick={() => {navigate("/activities")}}
+            className="blueButton">
+            Add a Custom Activity
+        </button>
 
     </>
     )

@@ -1,0 +1,20 @@
+.navbar {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color: #C2EAFF;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.logo {
+    height: 100px;
+}

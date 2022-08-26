@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import "./profilepage.css"
 
 
 export const UserProfileCard = () => {
@@ -25,12 +26,14 @@ export const UserProfileCard = () => {
     )
 
     return <>
-    <h2>User Information</h2>
+    <div className="userStyle">
+
     <section className="user">
         <header className="user__header">
             {user.fullName}
         </header>
         <div>Email: {user.email}</div>
     </section>
+    </div>
     </>
 }

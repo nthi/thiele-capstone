@@ -5,7 +5,11 @@ export const NavBar = () => {
     const navigate = useNavigate()
 
     return (
-        <ul className="navbar">
+        <>
+        <div className="navbar">
+
+        <img src="logo.jpg" className="logo" alt="Logo featuring line art: charcoal background, light-blue generic human figure holding line art rainbow overhead." />
+        <ul className="links">
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/main">Main</Link>
             </li>
@@ -17,14 +21,16 @@ export const NavBar = () => {
 
             {
                 localStorage.getItem("wswd_user")
-                    ? <li className="navbar__item navbar__logout">
+                ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("wswd_user")
                             navigate("/", {replace: true})
                         }}>Logout</Link>
                     </li>
                     : ""
-            }
+                }
         </ul>
+        </div>
+        </>
     )
 }

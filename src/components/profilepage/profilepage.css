@@ -1,0 +1,61 @@
+.loggedPlans__list, .savedPlans__list {
+    height: 500px;
+    width: 400px;
+    overflow: scroll;
+}
+
+.plan__item {
+    padding: 1rem;
+}
+
+.redButton {
+    background-color: #FD020A;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
+.indigoButton {
+    background-color: #6558F5;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
+.loggedStyle {
+    background-color: #FBDAE2;
+}
+
+.savedStyle {
+    background-color: #C2EAFF;
+}
+
+.userStyle {
+    background-color: rgb(195, 206, 196);
+}
+
+.profileStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.loggedColumn {
+    padding: 1rem;
+}
+
+.savedColumn {
+    padding: 1rem;
+}
+
+.profileColumn {
+    width: 20%;
+    padding: 1rem;
+}

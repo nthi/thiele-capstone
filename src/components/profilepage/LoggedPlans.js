@@ -1,27 +1,26 @@
 //once a saved plan has notes added to it and saved, it becomes logged and then displayed here
 import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
+import "./profilepage.css"
 
 
-export const LoggedPlans = () => {
+export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
     const [plans, setPlans] = useState([])
     const [activities, setActivities] = useState([])
 
-    const localWSWDUser = localStorage.getItem("wswd_user")
-    const wswdObject = JSON.parse(localWSWDUser)
+
 
     useEffect(() => {
-        fetch(`http://localhost:8088/userActivityBridge?isLogged=true&userId=${wswdObject.id}`)
-        .then((response) => response.json())
-        .then((loggedArray) => {
-            setPlans(loggedArray)
+        console.log("this is all plans", allPlans)
+        const viewPlan = allPlans.filter(plan => {
+            console.log("this is a plan in the filter", plan)
+            console.log("this is the bool",  plan.isLogged === true)
+            return plan.isLogged === true
         })
-        fetch(`http://localhost:8088/activities`)
-        .then((response) => response.json())
-        .then((activityArray) => {
-            setActivities(activityArray)
-        })
-    },[])
+        console.log(viewPlan)
+        setPlans(viewPlan)
+    },[allPlans])
+    //I need to also add logic to sort these chronologically.
 
 
 
@@ -29,15 +28,18 @@ export const LoggedPlans = () => {
     return (
         <>
         <section className="loggedPlans__list">
-            <h2>Logged Plans</h2>
+
+            <div className="loggedStyle">
             {
                 plans.map(
                     (plan) =>
                     <Plan key={`logged--${plan.id}`}
-                    activities={activities} 
-                    plan={plan}/>
+                    activities={allActivities} 
+                    plan={plan}
+                    wswdObject={wswdObject}/>
                 )
             }
+            </div>
         </section>
         </>
     )
