@@ -19,9 +19,13 @@ let thing = []
 
     randomOne = activities[Math.floor(Math.random() * activities.length)]
     
-    randomTwo = activities.filter(activity => activity.activityTypeId !== randomOne.activityTypeId)[Math.floor(Math.random() * activities.length)]
+    randomTwo = activities.filter(activity => activity.activityTypeId !== randomOne.activityTypeId)
 
-    randomThree = activities.filter(activity => activity.activityTypeId !== (randomTwo.activityTypeId || randomOne.activityTypeId))[Math.floor(Math.random() * activities.length)]
+    randomTwo = randomTwo[Math.floor(Math.random() * randomTwo.length)]
+
+    randomThree = activities.filter(activity => activity.activityTypeId !== randomTwo.activityTypeId || activity.activityTypeId !== randomOne.activityTypeId)
+
+    randomThree = randomThree[Math.floor(Math.random() * randomThree.length)]
 
     let tentativePlan = [randomOne, randomTwo, randomThree]
 

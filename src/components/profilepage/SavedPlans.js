@@ -26,16 +26,19 @@ export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}
     return (
         <>
         <section className="savedPlans__list">
-            <h2>Saved Plans</h2>
+
+            <div className="savedStyle">
             {
                 plans.map(
                     (plan) =>
                     <Plan key={`logged--${plan.id}`}
                     activities={allActivities} 
                     plan={plan}
-                    updateAllPlans={updateAllPlans}/>
+                    updateAllPlans={updateAllPlans}
+                    wswdObject={wswdObject}/>
                 )
             }
+            </div>
         </section>
         </>
     )

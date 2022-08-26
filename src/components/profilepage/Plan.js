@@ -37,12 +37,12 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             body: JSON.stringify(copy)
         })
             .then(response => response.json())
-            .then(() => {
-                fetch(`http://localhost:8088/userActivityBridge?userId=${wswdObject.id}`)
-                .then((response) => response.json())
-                .then((planArray) => {
-                    updateAllPlans(planArray)
-                })
+                .then(() => {
+                    fetch(`http://localhost:8088/userActivityBridge?userId=${wswdObject.id}`)
+                    .then((response) => response.json())
+                    .then((planArray) => {
+                        updateAllPlans(planArray)
+                    })
             })
     }
     //I think I need to refresh the page immediately with saveAndLogPlan button click. goes in that last .then? In HoneyRae's, I think this was "getAllTickets() which was deconstructed in what would be this component's function notation at the top ({})"

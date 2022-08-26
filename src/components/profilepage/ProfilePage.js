@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { LoggedPlans } from "./LoggedPlans"
 import { SavedPlans } from "./SavedPlans"
 import { UserProfileCard } from "./UserProfileCard"
+import "./profilepage.css"
 
 export const ProfilePage = () => {
 
@@ -28,23 +29,30 @@ export const ProfilePage = () => {
 
 
     return (<>
-        <div className="loggedColumn">
-        <LoggedPlans allPlans={allPlans}
-        allActivities={allActivities}
-        wswdObject={wswdObject}
-        />
-        </div>
+        <div className="profileStyle">
 
-        <div className="savedColumn">
-        <SavedPlans allPlans={allPlans}
-        allActivities={allActivities}
-        updateAllPlans={updateAllPlans}
-        wswdObject={wswdObject}
-        />
-        </div>
+            <div className="loggedColumn">
+            <h2>Logged Plans</h2>
+            <LoggedPlans allPlans={allPlans}
+            allActivities={allActivities}
+            wswdObject={wswdObject}
+            />
+            </div>
 
-        <div className="profileColumn">
-        <UserProfileCard />
+            <div className="savedColumn">
+            <h2>Saved Plans</h2>
+            <SavedPlans allPlans={allPlans}
+            allActivities={allActivities}
+            updateAllPlans={updateAllPlans}
+            wswdObject={wswdObject}
+            />
+            </div>
+
+            <div className="profileColumn">
+            <h2>User Information</h2>
+            <UserProfileCard />
+            </div>
+            
         </div>
     </>
     )

@@ -28,15 +28,18 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
     return (
         <>
         <section className="loggedPlans__list">
-            <h2>Logged Plans</h2>
+
+            <div className="loggedStyle">
             {
                 plans.map(
                     (plan) =>
                     <Plan key={`logged--${plan.id}`}
                     activities={allActivities} 
-                    plan={plan}/>
+                    plan={plan}
+                    wswdObject={wswdObject}/>
                 )
             }
+            </div>
         </section>
         </>
     )
