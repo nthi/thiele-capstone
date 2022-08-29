@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import  Form  from "react-bootstrap/Form"
 
 export const ActivityForm = () => {
     /*
@@ -44,15 +45,12 @@ export const ActivityForm = () => {
     }
 
     return (
-        <form className="ticketForm">
+        <form>
             <h2 className="ticketForm__title">Add a Custom Activity to the Database</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">Activity Name:</label>
-                    <input
-                        required autoFocus
+            <Form.Group>
+                    <Form.Label htmlFor="name">Activity Name:</Form.Label>
+                    <Form.Control 
                         type="text"
-                        className="form-control"
                         placeholder="Name your activity"
                         value={activity.activityName}
                         onChange={
@@ -62,13 +60,11 @@ export const ActivityForm = () => {
                                 update(copy)
                             }
                         } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Add a Description, Instructions, and/or Weblinks:</label>
-                    <textarea
-                        required autoFocus
+            </Form.Group>
+            <Form.Group>
+                    <Form.Label htmlFor="description">Add a Description, Instructions, and/or Weblinks:</Form.Label>
+                    <Form.Control 
+                        as="textarea"
                         type="text"
                         className="form-control"
                         placeholder="Brief description of activity"
@@ -80,12 +76,10 @@ export const ActivityForm = () => {
                                 update(copy)
                             }
                         } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
+            </Form.Group>
+            <Form.Group>
                     <label htmlFor="type">Activity Type:</label>
-                    <select className="form-control" value={activity.activityTypeId}
+                    <Form.Select size="lg" value={activity.activityTypeId}
                         onChange={
                             (evt) => {
                                 const copy = {...activity}
@@ -100,11 +94,9 @@ export const ActivityForm = () => {
                         <option value="4">4 - Language and Writing</option>
                         <option value="5">5 - Movement Break</option>
                         <option value="6">6 - Wild Card</option>
+                    </Form.Select>
 
-                    </select>
-
-                </div>
-            </fieldset>
+            </Form.Group>
             <button 
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">

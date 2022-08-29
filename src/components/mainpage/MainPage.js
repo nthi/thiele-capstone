@@ -5,6 +5,8 @@
 import { DisplayPlan } from "./DisplayPlan"
 import { RandomPlan } from "./RandomPlan"
 import { useNavigate } from "react-router-dom"
+import "./mainpage.css"
+
 
 export const MainPage = () => {
     const navigate = useNavigate()
@@ -17,7 +19,7 @@ export const MainPage = () => {
 
         <button           
             onClick={() => {navigate("/activities")}}
-            className="blueButton">
+            className="greenButton">
             Add a Custom Activity
         </button>
 
