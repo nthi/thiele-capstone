@@ -17,4 +17,9 @@ ul {
 
 .logo {
     height: 100px;
+    margin-left: 4px;
+}
+
+li {
+    padding: 0 2rem 0 2rem;
 }

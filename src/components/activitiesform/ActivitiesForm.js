@@ -91,7 +91,7 @@ export const ActivityForm = () => {
                         <option value="1">1 - Music</option>
                         <option value="2">2 - Poetry</option>
                         <option value="3">3 - Art</option>
-                        <option value="4">4 - Language and Writing</option>
+                        <option value="4">4 - Writing or Discussion</option>
                         <option value="5">5 - Movement Break</option>
                         <option value="6">6 - Wild Card</option>
                     </Form.Select>
@@ -100,7 +100,7 @@ export const ActivityForm = () => {
             <button 
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
-                Submit Ticket
+                Submit Activity
             </button>
         </form>
     )
