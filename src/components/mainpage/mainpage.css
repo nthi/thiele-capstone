@@ -1,3 +1,7 @@
+.main {
+    margin: 2rem 1rem;
+}
+
 .blueButton {
     background-color: #3A86FF;
     color: white;
@@ -6,6 +10,7 @@
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 4px;   
+
 }
 
 .purpleButton {
@@ -16,6 +21,7 @@
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 4px;
+  
 }
 
 .greenButton {
@@ -26,7 +32,7 @@
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 4px;
-    margin-top: 4rem;
+    margin: 2rem 1rem;
 }
 
 .displayPlan {
@@ -35,5 +41,5 @@
     background-color:white;
     border: double 2px #6558F5;
     padding: 1rem;
-    margin: 2rem;
+
 }

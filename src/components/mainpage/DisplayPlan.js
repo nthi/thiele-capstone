@@ -69,6 +69,7 @@ export const DisplayPlan = () => {
 
     return (
         <>
+        <div className="main">
         <button 
             onClick={(clickEvent) => generatePlanButtonClick(clickEvent)}
             className="blueButton">
@@ -106,7 +107,7 @@ export const DisplayPlan = () => {
             className="purpleButton">
             Save Plan
         </button>
-
+        </div>
         </>
     )
 
