@@ -17,12 +17,14 @@ export const MainPage = () => {
         <DisplayPlan />
         </div>
 
+        <div className="customAct">
+        <h2>How about adding a custom activity?</h2>
         <button           
             onClick={() => {navigate("/activities")}}
             className="greenButton">
             Add a Custom Activity
         </button>
-
+        </div>
     </>
     )
 }

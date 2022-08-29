@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import  Form  from "react-bootstrap/Form"
+import "./activitiesform.css"
 
 export const ActivityForm = () => {
     /*
@@ -45,8 +46,8 @@ export const ActivityForm = () => {
     }
 
     return (
-        <form>
-            <h2 className="ticketForm__title">Add a Custom Activity to the Database</h2>
+        <form className="activityForm">
+            <h2 className="form__title">Add a Custom Activity to the Database</h2>
             <Form.Group>
                     <Form.Label htmlFor="name">Activity Name:</Form.Label>
                     <Form.Control 

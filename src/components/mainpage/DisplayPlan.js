@@ -70,13 +70,14 @@ export const DisplayPlan = () => {
     return (
         <>
         <div className="main">
+        <h2>Would you like to create a custom activity plan?</h2>
         <button 
             onClick={(clickEvent) => generatePlanButtonClick(clickEvent)}
             className="blueButton">
             Generate Plan
         </button>
 
-        <h2>Try This!</h2>
+        <h4>Try This!</h4>
         
         <div>
             {
