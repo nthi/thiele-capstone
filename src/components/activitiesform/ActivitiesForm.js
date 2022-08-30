@@ -48,7 +48,7 @@ export const ActivityForm = () => {
     return (
         <form className="activityForm">
             <h2 className="form__title">Add a Custom Activity to the Database</h2>
-            <Form.Group>
+            <Form.Group className="formGroup">
                     <Form.Label htmlFor="name">Activity Name:</Form.Label>
                     <Form.Control 
                         type="text"
@@ -62,7 +62,7 @@ export const ActivityForm = () => {
                             }
                         } />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="formGroup">
                     <Form.Label htmlFor="description">Add a Description, Instructions, and/or Weblinks:</Form.Label>
                     <Form.Control 
                         as="textarea"
@@ -78,9 +78,9 @@ export const ActivityForm = () => {
                             }
                         } />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="formGroup">
                     <label htmlFor="type">Activity Type:</label>
-                    <Form.Select size="lg" value={activity.activityTypeId}
+                    <Form.Select size="med" value={activity.activityTypeId}
                         onChange={
                             (evt) => {
                                 const copy = {...activity}

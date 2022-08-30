@@ -70,7 +70,7 @@ export const DisplayPlan = () => {
     return (
         <>
         <div className="main">
-        <h2>Would you like to create a custom activity plan?</h2>
+        <h2>Would you like to create a random activity plan?</h2>
         <button 
             onClick={(clickEvent) => generatePlanButtonClick(clickEvent)}
             className="blueButton">

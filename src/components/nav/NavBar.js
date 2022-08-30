@@ -8,7 +8,7 @@ export const NavBar = () => {
         <>
         <div className="navbar">
 
-        <img src="logo.jpg" className="logo" alt="Logo featuring line art: charcoal background, light-blue generic human figure holding line art rainbow overhead." />
+        <img src="longLogo.jpg" className="logo" alt="Logo featuring line art: charcoal background, light-blue generic human figure holding line art rainbow overhead. Text: What Should We Do Today?" />
         <ul className="links">
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/main">Main</Link>
