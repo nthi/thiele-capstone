@@ -11,7 +11,8 @@ export const ActivityForm = () => {
     const [activity, update] = useState({
         activityTypeId: 0,
         activityName: "",
-        activityDescription: ""
+        activityDescription: "",
+        link: ""
     })
     /*
         TODO: Use the useNavigation() hook so you can redirect
@@ -28,7 +29,8 @@ export const ActivityForm = () => {
             const activityToSendToAPI = {
                 activityTypeId: activity.activityTypeId,
                 activityName: activity.activityName,
-                activityDescription: activity.activityDescription
+                activityDescription: activity.activityDescription,
+                link: activity.link
             }
 
         // TODO: Perform the fetch() to POST the object to the API
@@ -63,7 +65,7 @@ export const ActivityForm = () => {
                         } />
             </Form.Group>
             <Form.Group className="formGroup">
-                    <Form.Label htmlFor="description">Add a Description, Instructions, and/or Weblinks:</Form.Label>
+                    <Form.Label htmlFor="description">Add a Description or Instructions for Activity:</Form.Label>
                     <Form.Control 
                         as="textarea"
                         type="text"
@@ -74,6 +76,21 @@ export const ActivityForm = () => {
                             (evt) => {
                                 const copy = {...activity}
                                 copy.activityDescription = evt.target.value
+                                update(copy)
+                            }
+                        } />
+            </Form.Group>
+            <Form.Group className="formGroup">
+                    <Form.Label htmlFor="link">Add a Weblink if Applicable:</Form.Label>
+                    <Form.Control 
+                        type="text"
+                        className="form-control"
+                        placeholder="Add a weblink"
+                        value={activity.link}
+                        onChange={
+                            (evt) => {
+                                const copy = {...activity}
+                                copy.link = evt.target.value
                                 update(copy)
                             }
                         } />
