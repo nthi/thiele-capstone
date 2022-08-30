@@ -86,14 +86,21 @@ export const DisplayPlan = () => {
                     <div>
                     {
                         tacoPlan.map(plan => 
+                            <>
                             <div className="plan__item">
         
                             <p>Activity: {plan.activityName} </p>
                             <p>Details: {plan.activityDescription}</p>
-        
+                            <div>
+                                {
+                                    plan.link && plan.link.length > 0
+                                    ? <a href={plan.link} target="_blank">Click the Link!</a>
+                                    : ""
+                                }
+                            </div>
         
                             </div>
-                        
+                            </>
                         )
                     }
                     </div>

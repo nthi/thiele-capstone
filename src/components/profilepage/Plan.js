@@ -78,7 +78,7 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <div>
                 {
                     actOne?.link && actOne?.link.length > 0
-                    ? <a href={actOne?.link}>Click the Link!</a>
+                    ? <a href={actOne?.link} target="_blank">Click the Link!</a>
                     : ""
                 }
             </div>
@@ -90,7 +90,7 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <div>
                 {
                     actTwo?.link && actTwo?.link.length > 0
-                    ? <a href={actTwo?.link}>Click the Link!</a>
+                    ? <a href={actTwo?.link} target="_blank">Click the Link!</a>
                     : ""
                 }
             </div>
@@ -102,7 +102,7 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <div>
                 {
                     actThree?.link && actThree?.link.length > 0
-                    ? <a href={actThree?.link}>Click the Link!</a>
+                    ? <a href={actThree?.link} target="_blank">Click the Link!</a>
                     : ""
                 }
             </div>
