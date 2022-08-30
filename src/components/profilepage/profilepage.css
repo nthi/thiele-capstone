@@ -59,3 +59,14 @@
     width: 20%;
     padding: 1rem;
 }
+
+.dashline {
+    border-top: 10px solid black;
+    border-radius: 5px;
+}
+
+.minicard {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 2px dashed #8AC926;
+}

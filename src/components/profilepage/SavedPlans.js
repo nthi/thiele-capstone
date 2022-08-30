@@ -40,7 +40,7 @@ export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}
             }
             </div>
         </section>
-        </>
+         </>
     )
 }
 //make this into its own component that I can put into multiple places

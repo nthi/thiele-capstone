@@ -66,18 +66,47 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
     let actOne = activities.find(x=> x.id === plan.activityOneId)
     let actTwo = activities.find(x=> x.id === plan.activityTwoId)
     let actThree = activities.find(x=> x.id === plan.activityThreeId)
+  
 
     return (
+        <>
         
         <div className="plan__item" key={plan.id}>
+            <div className="minicard">
             <p>Activity One: {actOne?.activityName} </p>
             <p>Details: {actOne?.activityDescription}</p>
-
+            <div>
+                {
+                    actOne?.link && actOne?.link.length > 0
+                    ? <a href={actOne?.link}>Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
+            
+            <div className="minicard">
             <p>Activity Two: {actTwo?.activityName}</p>
             <p>Details: {actTwo?.activityDescription}</p>
-
+            <div>
+                {
+                    actTwo?.link && actTwo?.link.length > 0
+                    ? <a href={actTwo?.link}>Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
+            
+            <div className="minicard">
             <p>Activity Three: {actThree?.activityName}</p>
             <p>Details: {actThree?.activityDescription}</p>
+            <div>
+                {
+                    actThree?.link && actThree?.link.length > 0
+                    ? <a href={actThree?.link}>Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
 
             <div>
             {
@@ -138,5 +167,7 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             </div>
             
         </div>
+        <hr className="dashline" />
+        </>
     )
 }
