@@ -49,3 +49,9 @@
     border: double 2px #6558F5;
     padding: 1rem;
 }
+
+.plan__item {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 2px dashed #8AC926;
+}

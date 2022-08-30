@@ -6,6 +6,7 @@ import { DisplayPlan } from "./DisplayPlan"
 import { RandomPlan } from "./RandomPlan"
 import { useNavigate } from "react-router-dom"
 import "./mainpage.css"
+import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
 
 
 export const MainPage = () => {
@@ -25,6 +26,19 @@ export const MainPage = () => {
             Add a Custom Activity
         </button>
         </div>
+
+        <div className="embedYT">
+            <h4>Watch YouTube Links Here:</h4>
+            <YoutubeEmbed embedId="KV8Hj_E8LJc"/>
+        </div>
     </>
     )
 }
+
+//slice or split the links to get just that last bit
+//give my video div an id and link set to id can let me jump
+//put something in state to help me know what vid, then in part at bottom retrieve that state...
+
+//I will need a slice/split function
+//a clickHandler function
+//a component that manages the results
