@@ -20,7 +20,6 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
         console.log(viewPlan)
         setPlans(viewPlan)
     },[allPlans])
-    //I need to also add logic to sort these chronologically.
 
 
 
@@ -45,4 +44,3 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
     )
 }
 
-//inside map, make variable for a1, 2, 3 before return, do the .find, then run that for each entry a1.name, a2.etc

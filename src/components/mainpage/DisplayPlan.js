@@ -1,17 +1,22 @@
-//this module will probably create just the three-activity plan display? Not sure if "generate new plan" and "save plan" buttons go here or not. I think I call them here but I'm not sure if I create them here.
+//This module generates random plans when the "generate" button is clicked and POSTS the most current plan onscreen to the database when the "save" button is clicked.
+//When a YouTube link is clicked in the plan on display, an onClick function splits and captures part of the URL and sets it to linkClick state. LinkClick is passed as a prop to YoutubeEmbed.js, which uses it as the end/subdirectory of the "src" URL (completing the YoutubeEmbed component and allowing embedded YT video to display at the bottom of the screen view).
 
 import { useState } from "react"
 import { RandomPlan } from "./RandomPlan"
 import "./mainpage.css"
 import { useNavigate } from "react-router-dom"
+import { EmbedManager } from "../embedvideo/EmbedManager"
+import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
 
 export const DisplayPlan = () => {
 
     //needs a useState just for holding the random plan
     const [tacoPlan, updateRandomPlans] = useState([])
+    //needs a useState for holding the second half of the clicked, split YouTube link
+    const [linkClick, setLinkClick] = useState("")
 
     const navigate = useNavigate()
-    //this logic pulled from an app with  a form and we're using values from targets on the form. is this applicable in this component?
+    //this logic pulled from an app with a form and we're using values from targets on the form. is this applicable in this component?
     const [newPlan, saveNewPlan] = useState({
         
         userId: 0,
@@ -94,7 +99,13 @@ export const DisplayPlan = () => {
                             <div>
                                 {
                                     plan.link && plan.link.length > 0
-                                    ? <a href={plan.link} target="_blank">Click the Link!</a>
+                                    ? <a onClick={() => {
+                                        if (plan.link.includes("youtube")) {
+                                            let embedIdObject =  plan.link.split("?v=")
+                                            setLinkClick(embedIdObject[1])
+                                        }
+                                       
+                                    }} href={plan.link} target="_blank">Click the Link!</a>
                                     : ""
                                 }
                             </div>
@@ -116,8 +127,21 @@ export const DisplayPlan = () => {
             Save Plan
         </button>
         </div>
+        <YoutubeEmbed 
+        linkClick={linkClick} />
+
+        <div className="customAct">
+        <h2>How about adding a custom activity?</h2>
+        <button           
+            onClick={() => {navigate("/activities")}}
+            className="greenButton">
+            Add a Custom Activity
+        </button>
+        </div>
         </>
+
     )
 
 }
 
+//change all youtube links to non a-tags, because a-tags love to take you somewhere (either new tab/window or replace the page you are on. Use a p-tag or button that doesn't default to link.

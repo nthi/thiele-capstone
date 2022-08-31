@@ -19,19 +19,6 @@ export const MainPage = () => {
         <DisplayPlan />
         </div>
 
-        <div className="customAct">
-        <h2>How about adding a custom activity?</h2>
-        <button           
-            onClick={() => {navigate("/activities")}}
-            className="greenButton">
-            Add a Custom Activity
-        </button>
-        </div>
-
-        {/* <div className="embedYT">
-            <h4>Watch YouTube Links Here:</h4>
-            <YoutubeEmbed embedId="KV8Hj_E8LJc"/>
-        </div> */}
     </>
     )
 }
