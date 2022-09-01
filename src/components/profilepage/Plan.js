@@ -7,7 +7,7 @@
 import { useState } from "react"
 
 //when form is edited and/or saved-and-logged, page display should refresh immediately and the saved plan which was logged will now appear with notes and a timestamp in the logged display.
-export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
+export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, setLinkClick}) => {
 
 
 
@@ -61,7 +61,6 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
                     })
                 })
     }
-    //clair, ten minutes yoga, short trip outside DID delete, then page blinked to solid yellow/blank/no plans, then refresh made it come back without the plan I deleted.
 
     let actOne = activities.find(x=> x.id === plan.activityOneId)
     let actTwo = activities.find(x=> x.id === plan.activityTwoId)
@@ -77,7 +76,15 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <p>Details: {actOne?.activityDescription}</p>
             <div>
                 {
-                    actOne?.link && actOne?.link.length > 0
+                    actOne?.link.includes("youtube")
+                    ? <button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actOne.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button>
+                    : actOne?.link && actOne?.link.length > 0 
                     ? <a href={actOne?.link} target="_blank">Click the Link!</a>
                     : ""
                 }
@@ -89,7 +96,15 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <p>Details: {actTwo?.activityDescription}</p>
             <div>
                 {
-                    actTwo?.link && actTwo?.link.length > 0
+                    actTwo?.link.includes("youtube")
+                    ? <button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actTwo.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button>
+                    : actTwo?.link && actTwo?.link.length > 0 
                     ? <a href={actTwo?.link} target="_blank">Click the Link!</a>
                     : ""
                 }
@@ -101,7 +116,15 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             <p>Details: {actThree?.activityDescription}</p>
             <div>
                 {
-                    actThree?.link && actThree?.link.length > 0
+                    actThree?.link.includes("youtube")
+                    ? <button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actThree.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button>
+                    : actThree?.link && actThree?.link.length > 0 
                     ? <a href={actThree?.link} target="_blank">Click the Link!</a>
                     : ""
                 }

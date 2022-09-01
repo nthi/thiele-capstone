@@ -28,6 +28,16 @@
     border-radius: 4px;   
 }
 
+.yellowButton {
+    background-color: #FFCA3A;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
 .loggedStyle {
     background-color: #FBDAE2;
 }

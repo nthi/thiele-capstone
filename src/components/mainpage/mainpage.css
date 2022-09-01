@@ -38,6 +38,16 @@
     margin-top: .5rem;
 }
 
+.yellowButton {
+    background-color: #FFCA3A;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
 .customAct {
     margin: 2rem;
 }

@@ -99,13 +99,14 @@ export const DisplayPlan = () => {
                             <div>
                                 {
                                     plan.link.includes("youtube")
-                                    ? <button onClick={() => {
+                                    ? <button className="yellowButton"
+                                    onClick={() => {
                                         
                                             let embedIdObject =  plan.link.split("?v=")
                                             setLinkClick(embedIdObject[1])
                                         
                                        
-                                    }} >Click the Link!</button>
+                                    }} >Click the Button!</button>
                                     : plan.link && plan.link.length > 0 ?<a href={plan.link} target="_blank">Click the Link!</a>
                                     : ""
                                 }
@@ -148,8 +149,7 @@ export const DisplayPlan = () => {
 
 }
 
-//change all youtube links to non a-tags, because a-tags take you somewhere (either new tab/window or replace the page you are on. Use a p-tag or button that doesn't default to link.
-//having trouble switching these a-tags to buttons. Is this a case where I need to move everything to a function?
+
 
 //href={plan.link} target="_blank"
 

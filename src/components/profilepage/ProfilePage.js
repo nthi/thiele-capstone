@@ -3,12 +3,16 @@ import { LoggedPlans } from "./LoggedPlans"
 import { SavedPlans } from "./SavedPlans"
 import { UserProfileCard } from "./UserProfileCard"
 import "./profilepage.css"
+import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
 
 export const ProfilePage = () => {
 
     const [allPlans, updateAllPlans] = useState([])
     //I'll send allPlans and allActivites, use updateAllPlans in saved plans after PUT
     const [allActivities, updateAllActivities] = useState([])
+
+//needs a useState for holding the second half of clicked, split YouTube link
+    const [linkClick, setLinkClick] = useState("")
 
     const localWSWDUser = localStorage.getItem("wswd_user")
     const wswdObject = JSON.parse(localWSWDUser)
@@ -36,6 +40,8 @@ export const ProfilePage = () => {
             <LoggedPlans allPlans={allPlans}
             allActivities={allActivities}
             wswdObject={wswdObject}
+            linkClick={linkClick}
+            setLinkClick={setLinkClick}
             />
             </div>
 
@@ -45,6 +51,8 @@ export const ProfilePage = () => {
             allActivities={allActivities}
             updateAllPlans={updateAllPlans}
             wswdObject={wswdObject}
+            linkClick={linkClick}
+            setLinkClick={setLinkClick}
             />
             </div>
 
@@ -54,6 +62,9 @@ export const ProfilePage = () => {
             </div>
             
         </div>
+
+        <YoutubeEmbed 
+        linkClick={linkClick} />
     </>
     )
 }

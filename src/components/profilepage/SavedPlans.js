@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
 import "./profilepage.css"
 
-export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}) => {
+export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject, linkClick, setLinkClick}) => {
     const [plans, setPlans] = useState([])
     const [activities, setActivities] = useState([])
 
@@ -33,7 +33,10 @@ export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject}
                     activities={allActivities} 
                     plan={plan}
                     updateAllPlans={updateAllPlans}
-                    wswdObject={wswdObject}/>
+                    wswdObject={wswdObject}
+                    linkClick={linkClick}
+                    setLinkClick={setLinkClick}/>
+
                 )
             }
             </div>

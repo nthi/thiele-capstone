@@ -4,7 +4,7 @@ import { Plan } from "./Plan"
 import "./profilepage.css"
 
 
-export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
+export const LoggedPlans = ({allPlans, allActivities, wswdObject, linkClick, setLinkClick}) => {
     const [plans, setPlans] = useState([])
     const [activities, setActivities] = useState([])
 
@@ -35,7 +35,9 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
                     <Plan key={`logged--${plan.id}`}
                     activities={allActivities} 
                     plan={plan}
-                    wswdObject={wswdObject}/>
+                    wswdObject={wswdObject}
+                    linkClick={linkClick}
+                    setLinkClick={setLinkClick}/>
                 )
             }
             </div>
