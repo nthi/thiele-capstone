@@ -4,7 +4,7 @@ import { Plan } from "./Plan"
 import "./profilepage.css"
 
 
-export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
+export const LoggedPlans = ({allPlans, allActivities, wswdObject, linkClick, setLinkClick}) => {
     const [plans, setPlans] = useState([])
     const [activities, setActivities] = useState([])
 
@@ -20,7 +20,6 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
         console.log(viewPlan)
         setPlans(viewPlan)
     },[allPlans])
-    //I need to also add logic to sort these chronologically.
 
 
 
@@ -36,7 +35,9 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
                     <Plan key={`logged--${plan.id}`}
                     activities={allActivities} 
                     plan={plan}
-                    wswdObject={wswdObject}/>
+                    wswdObject={wswdObject}
+                    linkClick={linkClick}
+                    setLinkClick={setLinkClick}/>
                 )
             }
             </div>
@@ -45,4 +46,3 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject}) => {
     )
 }
 
-//inside map, make variable for a1, 2, 3 before return, do the .find, then run that for each entry a1.name, a2.etc

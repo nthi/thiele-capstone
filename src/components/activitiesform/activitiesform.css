@@ -1,0 +1,9 @@
+/*think about how to use boostrap/pico/library for styling the activities form*/
+
+.activityForm {
+    margin: 2rem;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}

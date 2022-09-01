@@ -1,17 +1,22 @@
-//this module will probably create just the three-activity plan display? Not sure if "generate new plan" and "save plan" buttons go here or not. I think I call them here but I'm not sure if I create them here.
+//This module generates random plans when the "generate" button is clicked and POSTS the most current plan onscreen to the database when the "save" button is clicked.
+//When a YouTube link is clicked in the plan on display, an onClick function splits and captures part of the URL and sets it to linkClick state. LinkClick is passed as a prop to YoutubeEmbed.js, which uses it as the end/subdirectory of the "src" URL (completing the YoutubeEmbed component and allowing embedded YT video to display at the bottom of the screen view).
 
 import { useState } from "react"
 import { RandomPlan } from "./RandomPlan"
 import "./mainpage.css"
 import { useNavigate } from "react-router-dom"
+import { EmbedManager } from "../embedvideo/EmbedManager"
+import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
 
 export const DisplayPlan = () => {
 
     //needs a useState just for holding the random plan
     const [tacoPlan, updateRandomPlans] = useState([])
+    //needs a useState for holding the second half of the clicked, split YouTube link
+    const [linkClick, setLinkClick] = useState("")
 
     const navigate = useNavigate()
-    //this logic pulled from an app with  a form and we're using values from targets on the form. is this applicable in this component?
+    //this logic pulled from an app with a form and we're using values from targets on the form. is this applicable in this component?
     const [newPlan, saveNewPlan] = useState({
         
         userId: 0,
@@ -69,13 +74,15 @@ export const DisplayPlan = () => {
 
     return (
         <>
+        <div className="main">
+        <h2>Would you like to create a random activity plan?</h2>
         <button 
             onClick={(clickEvent) => generatePlanButtonClick(clickEvent)}
             className="blueButton">
             Generate Plan
         </button>
 
-        <h2>Try This!</h2>
+        <h4>Try This!</h4>
         
         <div>
             {
@@ -84,14 +91,29 @@ export const DisplayPlan = () => {
                     <div>
                     {
                         tacoPlan.map(plan => 
+                            <>
                             <div className="plan__item">
         
                             <p>Activity: {plan.activityName} </p>
                             <p>Details: {plan.activityDescription}</p>
-        
+                            <div>
+                                {
+                                    plan.link.includes("youtube")
+                                    ? <a href="#embed"><button className="yellowButton"
+                                    onClick={() => {
+                                        
+                                            let embedIdObject =  plan.link.split("?v=")
+                                            setLinkClick(embedIdObject[1])
+                                        
+                                       
+                                    }} >Click the Button!</button></a>
+                                    : plan.link && plan.link.length > 0 ?<a href={plan.link} target="_blank">Click the Link!</a>
+                                    : ""
+                                }
+                            </div>
         
                             </div>
-                        
+                            </>
                         )
                     }
                     </div>
@@ -106,9 +128,32 @@ export const DisplayPlan = () => {
             className="purpleButton">
             Save Plan
         </button>
+        </div>
+
+        <div className="customAct">
+        <h2>How about adding a custom activity?</h2>
+        <button           
+            onClick={() => {navigate("/activities")}}
+            className="greenButton">
+            Add a Custom Activity
+        </button>
+        </div>
+        
+        <div id="embed">
+        <YoutubeEmbed 
+        linkClick={linkClick} />
+        </div>
+
 
         </>
+
     )
 
 }
 
+
+
+//href={plan.link} target="_blank"
+
+
+//conditional that figures out if it's link or youtube

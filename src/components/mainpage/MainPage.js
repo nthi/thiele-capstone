@@ -1,10 +1,14 @@
 //This module will render main page display components (inside classed divs for styling purposes).
 //TO DO: for stretch goals, add toggle-button elements to opt-in/out of certain categories
-//TO DO: for stretch goals, add custom-submission-form where user can add a link that will automatically appear in their plan or add it to the activity table to be included in the future.
+
+//this will be parent of EmbedManager.js, needs to either hold state and create props or pass them down.
+//I think that information that EmbedManager needs actually comes from DisplayPlan. Does that mean DisplayPlan is parent, this is child, and EmbedManager is grandchild?
 
 import { DisplayPlan } from "./DisplayPlan"
-import { RandomPlan } from "./RandomPlan"
 import { useNavigate } from "react-router-dom"
+import "./mainpage.css"
+//import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
+
 
 export const MainPage = () => {
     const navigate = useNavigate()
@@ -15,12 +19,7 @@ export const MainPage = () => {
         <DisplayPlan />
         </div>
 
-        <button           
-            onClick={() => {navigate("/activities")}}
-            className="blueButton">
-            Add a Custom Activity
-        </button>
-
     </>
     )
 }
+

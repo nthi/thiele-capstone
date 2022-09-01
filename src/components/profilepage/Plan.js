@@ -7,7 +7,7 @@
 import { useState } from "react"
 
 //when form is edited and/or saved-and-logged, page display should refresh immediately and the saved plan which was logged will now appear with notes and a timestamp in the logged display.
-export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
+export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, setLinkClick}) => {
 
 
 
@@ -61,23 +61,75 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
                     })
                 })
     }
-    //clair, ten minutes yoga, short trip outside DID delete, then page blinked to solid yellow/blank/no plans, then refresh made it come back without the plan I deleted.
 
     let actOne = activities.find(x=> x.id === plan.activityOneId)
     let actTwo = activities.find(x=> x.id === plan.activityTwoId)
     let actThree = activities.find(x=> x.id === plan.activityThreeId)
+  
 
     return (
+        <>
         
         <div className="plan__item" key={plan.id}>
+            <div className="minicard">
             <p>Activity One: {actOne?.activityName} </p>
             <p>Details: {actOne?.activityDescription}</p>
-
+            <div>
+                {
+                    actOne?.link.includes("youtube")
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actOne.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button></a>
+                    : actOne?.link && actOne?.link.length > 0 
+                    ? <a href={actOne?.link} target="_blank">Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
+            
+            <div className="minicard">
             <p>Activity Two: {actTwo?.activityName}</p>
             <p>Details: {actTwo?.activityDescription}</p>
-
+            <div>
+                {
+                    actTwo?.link.includes("youtube")
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actTwo.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button></a>
+                    : actTwo?.link && actTwo?.link.length > 0 
+                    ? <a href={actTwo?.link} target="_blank">Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
+            
+            <div className="minicard">
             <p>Activity Three: {actThree?.activityName}</p>
             <p>Details: {actThree?.activityDescription}</p>
+            <div>
+                {
+                    actThree?.link.includes("youtube")
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
+                                        
+                        let embedIdObject =  actThree.link.split("?v=")
+                        setLinkClick(embedIdObject[1])
+                    
+                   
+                }} >Click the Button!</button></a>
+                    : actThree?.link && actThree?.link.length > 0 
+                    ? <a href={actThree?.link} target="_blank">Click the Link!</a>
+                    : ""
+                }
+            </div>
+            </div>
 
             <div>
             {
@@ -138,5 +190,7 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject}) => {
             </div>
             
         </div>
+        <hr className="dashline" />
+        </>
     )
 }

@@ -28,6 +28,16 @@
     border-radius: 4px;   
 }
 
+.yellowButton {
+    background-color: #FFCA3A;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
 .loggedStyle {
     background-color: #FBDAE2;
 }
@@ -58,4 +68,15 @@
 .profileColumn {
     width: 20%;
     padding: 1rem;
+}
+
+.dashline {
+    border-top: 10px solid black;
+    border-radius: 5px;
+}
+
+.minicard {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 2px dashed #8AC926;
 }

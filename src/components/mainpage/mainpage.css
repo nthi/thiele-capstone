@@ -1,3 +1,7 @@
+.main {
+    margin: 2rem;
+}
+
 .blueButton {
     background-color: #3A86FF;
     color: white;
@@ -5,7 +9,10 @@
     text-align: center;
     font-size: 14px;
     padding: 10px 24px;
-    border-radius: 4px;   
+    border-radius: 4px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;   
+
 }
 
 .purpleButton {
@@ -16,6 +23,33 @@
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 4px;
+    margin-top: .5rem;
+  
+}
+
+.greenButton {
+    background-color: #0db96f;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;
+    margin-top: .5rem;
+}
+
+.yellowButton {
+    background-color: #FFCA3A;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;   
+}
+
+.customAct {
+    margin: 2rem;
 }
 
 .displayPlan {
@@ -24,5 +58,10 @@
     background-color:white;
     border: double 2px #6558F5;
     padding: 1rem;
-    margin: 2rem;
+}
+
+.plan__item {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 2px dashed #8AC926;
 }
