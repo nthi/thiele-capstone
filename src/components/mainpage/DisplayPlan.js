@@ -98,14 +98,15 @@ export const DisplayPlan = () => {
                             <p>Details: {plan.activityDescription}</p>
                             <div>
                                 {
-                                    plan.link && plan.link.length > 0
-                                    ? <a onClick={() => {
-                                        if (plan.link.includes("youtube")) {
+                                    plan.link.includes("youtube")
+                                    ? <button onClick={() => {
+                                        
                                             let embedIdObject =  plan.link.split("?v=")
                                             setLinkClick(embedIdObject[1])
-                                        }
+                                        
                                        
-                                    }} href={plan.link} target="_blank">Click the Link!</a>
+                                    }} >Click the Link!</button>
+                                    : plan.link && plan.link.length > 0 ?<a href={plan.link} target="_blank">Click the Link!</a>
                                     : ""
                                 }
                             </div>
@@ -127,8 +128,6 @@ export const DisplayPlan = () => {
             Save Plan
         </button>
         </div>
-        <YoutubeEmbed 
-        linkClick={linkClick} />
 
         <div className="customAct">
         <h2>How about adding a custom activity?</h2>
@@ -138,10 +137,21 @@ export const DisplayPlan = () => {
             Add a Custom Activity
         </button>
         </div>
+
+        <YoutubeEmbed 
+        linkClick={linkClick} />
+
+
         </>
 
     )
 
 }
 
-//change all youtube links to non a-tags, because a-tags love to take you somewhere (either new tab/window or replace the page you are on. Use a p-tag or button that doesn't default to link.
+//change all youtube links to non a-tags, because a-tags take you somewhere (either new tab/window or replace the page you are on. Use a p-tag or button that doesn't default to link.
+//having trouble switching these a-tags to buttons. Is this a case where I need to move everything to a function?
+
+//href={plan.link} target="_blank"
+
+
+//conditional that figures out if it's link or youtube
