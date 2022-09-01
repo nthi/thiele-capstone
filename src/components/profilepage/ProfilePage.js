@@ -63,8 +63,10 @@ export const ProfilePage = () => {
             
         </div>
 
+        <div id="profileEmbed">
         <YoutubeEmbed 
         linkClick={linkClick} />
+        </div>
     </>
     )
 }

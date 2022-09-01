@@ -77,13 +77,13 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, s
             <div>
                 {
                     actOne?.link.includes("youtube")
-                    ? <button className="yellowButton" onClick={() => {
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
                                         
                         let embedIdObject =  actOne.link.split("?v=")
                         setLinkClick(embedIdObject[1])
                     
                    
-                }} >Click the Button!</button>
+                }} >Click the Button!</button></a>
                     : actOne?.link && actOne?.link.length > 0 
                     ? <a href={actOne?.link} target="_blank">Click the Link!</a>
                     : ""
@@ -97,13 +97,13 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, s
             <div>
                 {
                     actTwo?.link.includes("youtube")
-                    ? <button className="yellowButton" onClick={() => {
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
                                         
                         let embedIdObject =  actTwo.link.split("?v=")
                         setLinkClick(embedIdObject[1])
                     
                    
-                }} >Click the Button!</button>
+                }} >Click the Button!</button></a>
                     : actTwo?.link && actTwo?.link.length > 0 
                     ? <a href={actTwo?.link} target="_blank">Click the Link!</a>
                     : ""
@@ -117,13 +117,13 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, s
             <div>
                 {
                     actThree?.link.includes("youtube")
-                    ? <button className="yellowButton" onClick={() => {
+                    ? <a href="#profileEmbed"><button className="yellowButton" onClick={() => {
                                         
                         let embedIdObject =  actThree.link.split("?v=")
                         setLinkClick(embedIdObject[1])
                     
                    
-                }} >Click the Button!</button>
+                }} >Click the Button!</button></a>
                     : actThree?.link && actThree?.link.length > 0 
                     ? <a href={actThree?.link} target="_blank">Click the Link!</a>
                     : ""

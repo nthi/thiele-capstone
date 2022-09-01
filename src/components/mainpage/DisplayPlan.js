@@ -99,14 +99,14 @@ export const DisplayPlan = () => {
                             <div>
                                 {
                                     plan.link.includes("youtube")
-                                    ? <button className="yellowButton"
+                                    ? <a href="#embed"><button className="yellowButton"
                                     onClick={() => {
                                         
                                             let embedIdObject =  plan.link.split("?v=")
                                             setLinkClick(embedIdObject[1])
                                         
                                        
-                                    }} >Click the Button!</button>
+                                    }} >Click the Button!</button></a>
                                     : plan.link && plan.link.length > 0 ?<a href={plan.link} target="_blank">Click the Link!</a>
                                     : ""
                                 }
@@ -138,9 +138,11 @@ export const DisplayPlan = () => {
             Add a Custom Activity
         </button>
         </div>
-
+        
+        <div id="embed">
         <YoutubeEmbed 
         linkClick={linkClick} />
+        </div>
 
 
         </>
