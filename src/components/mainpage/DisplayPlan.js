@@ -1,5 +1,6 @@
 //This module generates random plans when the "generate" button is clicked and POSTS the most current plan onscreen to the database when the "save" button is clicked.
 //When a YouTube link is clicked in the plan on display, an onClick function splits and captures part of the URL and sets it to linkClick state. LinkClick is passed as a prop to YoutubeEmbed.js, which uses it as the end/subdirectory of the "src" URL (completing the YoutubeEmbed component and allowing embedded YT video to display at the bottom of the screen view).
+//An interesting puzzle for another day: exactly once, all three activities have been poetry. Not sure how that happened. Check here and also RandomPlan.js.
 
 import { useState } from "react"
 import { RandomPlan } from "./RandomPlan"

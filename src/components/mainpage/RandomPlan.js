@@ -1,5 +1,6 @@
 //this module needs to pull three random activities from the activities table.
 //none of the three should repeat the same activityTypeId.
+//An interesting puzzle for another day: exactly once, all three activities have been poetry. Not sure how that happened. Check here and also DisplayPlan.js.
 
 
 export const RandomPlan = () => {
