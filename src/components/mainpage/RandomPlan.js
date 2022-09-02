@@ -24,7 +24,7 @@ let thing = []
 
     randomTwo = randomTwo[Math.floor(Math.random() * randomTwo.length)]
 
-    randomThree = activities.filter(activity => activity.activityTypeId !== randomTwo.activityTypeId || activity.activityTypeId !== randomOne.activityTypeId)
+    randomThree = activities.filter(activity => activity.activityTypeId !== randomTwo.activityTypeId && activity.activityTypeId !== randomOne.activityTypeId)
 
     randomThree = randomThree[Math.floor(Math.random() * randomThree.length)]
 
