@@ -1,4 +1,5 @@
-/*This module allows the embedded video display to be responsive. Code from https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2*/
+/*This module allows the embedded video display to be responsive. 
+Code from https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2*/
 
 .video-responsive {
     overflow: hidden;

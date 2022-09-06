@@ -1,3 +1,5 @@
+/*Maintains css styling for the Profile Page, including flex display, scroll columns, neat spacing/margins, and buttons.*/
+
 .loggedPlans__list, .savedPlans__list {
     height: 500px;
     width: 400px;

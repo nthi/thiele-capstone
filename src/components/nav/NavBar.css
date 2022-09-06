@@ -1,3 +1,5 @@
+/*Maintains css styling for the nav bar*/
+
 .navbar {
     display:flex;
     flex-direction:row;

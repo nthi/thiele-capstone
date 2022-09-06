@@ -1,3 +1,4 @@
+//Creates a nav bar with logo and links for Main page, Profile page, and Logout function.
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 

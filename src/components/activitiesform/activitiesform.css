@@ -1,4 +1,4 @@
-/*think about how to use boostrap/pico/library for styling the activities form*/
+/*This module neatens up the margins on ActivitiesForm.js. I used Bootstrap for React for the form styling itself.*/
 
 .activityForm {
     margin: 2rem;

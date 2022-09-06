@@ -1,11 +1,18 @@
-//This module generates random plans when the "generate" button is clicked and POSTS the most current plan onscreen to the database when the "save" button is clicked.
-//When a YouTube link is clicked in the plan on display, an onClick function splits and captures part of the URL and sets it to linkClick state. LinkClick is passed as a prop to YoutubeEmbed.js, which uses it as the end/subdirectory of the "src" URL (completing the YoutubeEmbed component and allowing embedded YT video to display at the bottom of the screen view).
+// This module uses the RandomPlan function to generate an array of random plans when the "generate" button is clicked.
+// The three plans are displayed onscreen. 
+// The component includes a fetch() to POST the most current onscreen plan to the database when the "save" button is clicked.
+
+// When a YouTube link is clicked in the plan on display, an onClick function splits 
+// and captures part of the URL and sets it to linkClick state. 
+
+// LinkClick is passed as a prop to YoutubeEmbed.js, which uses it as the end/subdirectory 
+// of the "src" URL (completing the YoutubeEmbed component 
+// and allowing embedded YT video to display at the bottom of the screen view).
 
 import { useState } from "react"
 import { RandomPlan } from "./RandomPlan"
 import "./mainpage.css"
 import { useNavigate } from "react-router-dom"
-import { EmbedManager } from "../embedvideo/EmbedManager"
 import YoutubeEmbed from "../embedvideo/YoutubeEmbed"
 
 export const DisplayPlan = () => {
@@ -31,19 +38,18 @@ export const DisplayPlan = () => {
     const localWSWDUser = localStorage.getItem("wswd_user")
     const wswdObject = JSON.parse(localWSWDUser)
 
-    //note: this random function generator gets mad after a couple of sequential clicks. Will work a few times in a row, but sometimes stall out and only work again if you refresh, save a plan then navigate back to main and generate plan again, or save plan, nav back, then refresh.
     const generatePlanButtonClick = (event) => {
         event.preventDefault()
 
         //this function contains a fetch call, which is why we need a .then when we call it here.
-        //RandomPlan fetches the activities table and ultimately returns a random three-plan-activity. This puts that random plan in state so we can display it and potentially save/POST it to the bridge table.
+        //RandomPlan fetches the activities table and ultimately returns a random three-plan-activity. 
+        //This puts that random plan in state so we can display it and potentially save/POST it to the bridge table.
         RandomPlan()
        .then(updateRandomPlans)
 
     }
 
-    //to post a saved plan obj to the bridge table
-    //where will I be pulling the activityOne/two/three values?
+    //To post a saved plan obj to the bridge table
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
@@ -151,9 +157,3 @@ export const DisplayPlan = () => {
 
 }
 
-
-
-//href={plan.link} target="_blank"
-
-
-//conditional that figures out if it's link or youtube

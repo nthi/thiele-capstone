@@ -1,5 +1,5 @@
 //This component allows me to embed YouTube videos in my app.
-//code from https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2
+//Code from https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2
 
 import React from "react";
 import PropTypes from "prop-types";

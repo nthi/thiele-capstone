@@ -1,0 +1,36 @@
+/*This module neatens margins and styles buttons for the Login and Register pages.*/
+
+.brightGreenButton {
+    background-color: #61ff7e;
+    color: #3b4854;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px; 
+    margin-top: 2rem;  
+}
+
+.nameLine, .emailLine {
+    margin-top: 2rem;
+}
+
+.customBlueButton {
+    background-color: #8338ec;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px; 
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form--login {
+    margin: 1.5rem;
+}
+
+.link--register {
+    margin-left: 1.5rem;
+}

@@ -1,3 +1,5 @@
+//This module creates a registration form for new users. Includes a fetch() to POST new users to the database and a a fetch() to check whether an email already exists.
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
@@ -57,19 +59,19 @@ export const Register = (props) => {
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for What Should We Do Today</h1>
                 <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
+                    <label className="nameLine" htmlFor="fullName"> Full Name </label>
                     <input onChange={updateUser}
                            type="text" id="fullName" className="form-control"
                            placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                    <label className="emailLine" htmlFor="email"> Email address </label>
                     <input onChange={updateUser}
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="brightGreenButton" type="submit"> Register </button>
                 </fieldset>
             </form>
         </main>

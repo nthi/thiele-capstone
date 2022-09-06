@@ -1,12 +1,8 @@
-//this module generates the plan display for multiple components in the app.
-//is this where I generate button and form logic? or is that better left to the components in question.
-//TO DO: I'll need a DELETE button if logged plan
-//a DELETE button for saved plans
-//an add-notes form/save-and-log button for saved plans to PUT changes to the bridge table in "note" key
-
+//This module generates the plan display for multiple components in the app.
+//Includes on-page form for adding notes to plans, log button, and delete button for saved plans user no longer wants.
+//If "submit note and log plan" is clicked, the plan object is updated with a fetch() PUT to include new Date(), optional note, and isLogged: true.
 import { useState } from "react"
 
-//when form is edited and/or saved-and-logged, page display should refresh immediately and the saved plan which was logged will now appear with notes and a timestamp in the logged display.
 export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, setLinkClick}) => {
 
 
@@ -19,7 +15,6 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, s
 
     const saveAndLogPlan = (event) => {
         const copy = {
-            //add rest of stuff here
             id: plan.id,
             userId: plan.userId,
             activityOneId: plan.activityOneId,
@@ -45,9 +40,6 @@ export const Plan = ({plan, activities, updateAllPlans, wswdObject, linkClick, s
                     })
             })
     }
-    //I think I need to refresh the page immediately with saveAndLogPlan button click. goes in that last .then? In HoneyRae's, I think this was "getAllTickets() which was deconstructed in what would be this component's function notation at the top ({})"
-    //    const [plansToDisplay, updatePlansToDisplay] = useState([])
-    // and somewhere a .then(plansArray => updatePlansToDisplay(plansArray))
 
     const deletePlan = (event) => {
         fetch(`http://localhost:8088/userActivityBridge/${plan.id}`, {
