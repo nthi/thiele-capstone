@@ -1,3 +1,6 @@
+//This module allows a registered user to log in using a valid email address.
+//Module also includes an alert for incorrect login information and a link to allow new users to register.
+
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"

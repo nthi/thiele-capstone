@@ -1,4 +1,4 @@
-//this component will display list of all plans that user "saves". Will include notes form.
+//This module displays list of all plans that user saves from MainPage random generator.
 
 
 import { useEffect, useState } from "react"
@@ -16,9 +16,6 @@ export const SavedPlans = ({allPlans, allActivities, updateAllPlans, wswdObject,
         setPlans(viewPlan)
 
     },[allPlans])
-
-    //set state for all activity bridge in profile page, then get that state in useEffect (can also do fetch activities in profile page), then use a .filter to get isLogged true or false
-
 
 
     return (

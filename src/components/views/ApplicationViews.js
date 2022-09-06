@@ -1,3 +1,5 @@
+//This module renders app views.
+
 import { Outlet, Routes, Route } from "react-router-dom"
 import { ActivityForm } from "../activitiesform/ActivitiesForm"
 import { MainPage } from "../mainpage/MainPage"

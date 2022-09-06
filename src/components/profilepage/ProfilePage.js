@@ -1,3 +1,5 @@
+//This module renders the LoggedPlans, SavedPlans, and UserProfileCard components.
+
 import { useEffect, useState } from "react"
 import { LoggedPlans } from "./LoggedPlans"
 import { SavedPlans } from "./SavedPlans"
@@ -11,7 +13,7 @@ export const ProfilePage = () => {
     //I'll send allPlans and allActivites, use updateAllPlans in saved plans after PUT
     const [allActivities, updateAllActivities] = useState([])
 
-//needs a useState for holding the second half of clicked, split YouTube link
+    //needs a useState for holding the second half of clicked, split YouTube link
     const [linkClick, setLinkClick] = useState("")
 
     const localWSWDUser = localStorage.getItem("wswd_user")

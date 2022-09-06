@@ -1,3 +1,5 @@
+//This module creates a registration form for new users. Includes a fetch() to POST new users to the database and a a fetch() to check whether an email already exists.
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"

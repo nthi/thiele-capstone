@@ -1,6 +1,5 @@
-//this module needs to pull three random activities from the activities table.
-//none of the three should repeat the same activityTypeId.
-//An interesting puzzle for another day: exactly once, all three activities have been poetry. Not sure how that happened. Check here and also DisplayPlan.js.
+//This module creates a function that will pull three random activities from the activities table.
+//None of the three should repeat the same activityTypeId.
 
 
 export const RandomPlan = () => {
@@ -38,4 +37,3 @@ return thing
       
 }
 
-//what if I return the "generate plan" button and the plan for display in this component then call the component in the return display in DisplayPlan?js? Then the display there is only responsible for the save button display and click event.

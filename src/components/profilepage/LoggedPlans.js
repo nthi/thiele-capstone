@@ -1,4 +1,5 @@
-//once a saved plan has notes added to it and saved, it becomes logged and then displayed here
+//This module displays logged plans with notes and date/time stamps.
+
 import { useEffect, useState } from "react"
 import { Plan } from "./Plan"
 import "./profilepage.css"

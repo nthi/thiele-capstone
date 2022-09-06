@@ -1,12 +1,11 @@
+//This module creates the User Profile info section on the Profile page.
+
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import "./profilepage.css"
 
 
 export const UserProfileCard = () => {
-    //I pulled this from honeyraes but I don't think i need useParams... do I need user/updateUser/useState? I think so?
-    //and I think I need useState with a {} to indicate I'm dealing with an object?
-    // const {userId} = useParams()
+
     const [user, updateUser] = useState({})
 
 

@@ -1,3 +1,6 @@
+//This module displays a form for adding new custom activities to the database.
+//User can enter an activity name, description, optional weblink, and assign it an activityTypeId.
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import  Form  from "react-bootstrap/Form"
@@ -5,7 +8,7 @@ import "./activitiesform.css"
 
 export const ActivityForm = () => {
     /*
-        TODO: Add the correct default properties to the
+        Adds default properties to the
         initial state object
     */
     const [activity, update] = useState({
@@ -15,8 +18,8 @@ export const ActivityForm = () => {
         link: ""
     })
     /*
-        TODO: Use the useNavigation() hook so you can redirect
-        the user to the ticket list
+        useNavigation() hook to redirect
+        the user back to main
     */
    const navigate = useNavigate()
 
@@ -33,7 +36,7 @@ export const ActivityForm = () => {
                 link: activity.link
             }
 
-        // TODO: Perform the fetch() to POST the object to the API
+        // fetch() to POST the object to the API
         fetch(`http://localhost:8088/activities`, {
             method: "POST",
             headers: {
