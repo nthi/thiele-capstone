@@ -12,13 +12,8 @@ export const LoggedPlans = ({allPlans, allActivities, wswdObject, linkClick, set
 
 
     useEffect(() => {
-        console.log("this is all plans", allPlans)
-        const viewPlan = allPlans.filter(plan => {
-            console.log("this is a plan in the filter", plan)
-            console.log("this is the bool",  plan.isLogged === true)
-            return plan.isLogged === true
-        })
-        console.log(viewPlan)
+        const viewPlan = allPlans.filter(plan => plan.isLogged === true
+        )
         setPlans(viewPlan)
     },[allPlans])
 
