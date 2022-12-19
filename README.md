@@ -1,6 +1,6 @@
 # What Should We Do Today?
 
-I built this app because it can be overwhelming and time-consuming for parents and caregivers to make decisions about educational enrichment activities for children. What Should We Do Today?i generates a curated click-and-go lesson plan that doesn’t require research and prep.
+I built this app because it can be overwhelming and time-consuming for parents and caregivers to make decisions about educational enrichment activities for children. "What Should We Do Today?" generates a curated click-and-go lesson plan that doesn’t require research and prep.
 
 ## Generate a Plan
 A logged-in user begins on the Main Page, where they can click the “Generate Plan” button to display a random three-element lesson plan that will include activities from three of six categories: Music, Poetry, Art, Writing/Discussion, Movement Break, and Wild Card.
